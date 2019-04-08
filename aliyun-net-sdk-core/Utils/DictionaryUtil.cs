@@ -23,7 +23,7 @@ namespace Aliyun.Acs.Core.Utils
 {
     public class DictionaryUtil
     {
-        public static void Add<T>(Dictionary<string, string> dic, string key, T value)
+        public static void Add<T>(Dictionary<string, T> dic, string key, T value)
         {
             if (null == value)
             {
@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Core.Utils
             }
             if (dic == null)
             {
-                dic = new Dictionary<string, string>();
+                dic = new Dictionary<string, T>();
             }
             else if (dic.ContainsKey(key))
             {
                 dic.Remove(key);
             }
-            dic.Add(key, value.ToString());
+            dic.Add(key, value);
         }
 
-        public static string Get(Dictionary<string, string> dic, string key)
+        public static T Get<T>(Dictionary<string, T> dic, string key)
         {
             if (dic.ContainsKey(key))
             {
                 return dic[key];
             }
-            return null;
+            return default(T);
         }
 
         public static string Pop(Dictionary<string, string> dic, string key)

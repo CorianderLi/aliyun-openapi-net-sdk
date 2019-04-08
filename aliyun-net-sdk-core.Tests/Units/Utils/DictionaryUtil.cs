@@ -23,7 +23,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             DictionaryUtil.Add(nullDic, "nullKey", "nullValue"); // 方法无回调，无静态存储
 
             // When value is null
-            DictionaryUtil.Add(dic, "nullValue", nullDic); // 方法无回调，无静态存储
+            DictionaryUtil.Add<string>(dic, "nullValue", nullDic.ToString()); // 方法无回调，无静态存储
         }
 
         [Fact]

@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
             set
             {
                 durationSeconds = value;
-                DictionaryUtil.Add(QueryParameters, "DurationSeconds", value);
+                DictionaryUtil.Add(QueryParameters, "DurationSeconds", value.ToString());
             }
         }
 

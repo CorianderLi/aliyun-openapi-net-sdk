@@ -113,7 +113,6 @@ namespace Aliyun.Acs.Core.Profile
         {
             locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
         }
-
         public List<Endpoint> GetEndpoints(string regionId, string product)
         {
             if (null == endpoints)
@@ -127,6 +126,10 @@ namespace Aliyun.Acs.Core.Profile
             return endpoints;
         }
 
+        [Obsolete]
+        /// <summary>
+        /// please use GetEndpoints(string product, string regionId,string serviceCode)
+        /// </summary>
         public List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType)
 
         {
